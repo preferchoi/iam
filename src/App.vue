@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="half-width" id="div1">
+    <img :src="landing_img_path" alt="">
+  </div>
+  <div class="half-width" id="div2">
+    <introduceComponent />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import introduceComponent from "@/components/introduceComponent.vue";
 export default {
-  name: 'App',
+  data() {
+    return{
+      landing_img_path: require('@/assets/prefer_choi_96.jpg')
+    }
+  },
   components: {
-    HelloWorld
+    introduceComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.half-width {
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
 }
+
+#div1 img {
+    object-fit: cover;  /* 이미지가 div를 꽉 채우도록 */
+}
+
+#div2 {
+    display: flex;
+    flex-direction: column;
+}
+
 </style>
