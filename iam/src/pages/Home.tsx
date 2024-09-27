@@ -25,7 +25,7 @@ function Home() {
             개발하는 데 관심이 많습니다. 다양한 환경에서의 팀워크와 문제 해결
             능력을 통해 여러 프로젝트를 성공적으로 완료한 경험이 있습니다.
           </p>
-          <a href="/about_me" className="text-blue-500 hover:underline">
+          <a href="/#about_me" className="text-blue-500 hover:underline">
             더보기
           </a>
         </div>
@@ -57,7 +57,7 @@ function Home() {
               ))}
           </div>
           <a
-            href="/projects"
+            href="/#projects"
             className="text-blue-500 hover:underline mt-6 block"
           >
             모든 프로젝트 보기
@@ -86,6 +86,12 @@ function Home() {
               <p>MySQL, Oracle DB</p>
             </div>
           </div>
+          <a
+            href="/#skills"
+            className="text-blue-500 hover:underline mt-6 block"
+          >
+            자세히 보기
+          </a>
         </div>
       </section>
 
