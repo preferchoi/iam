@@ -18,7 +18,7 @@ const skills: Skill[] = [
   
   {
     name: "TypeScript",
-    description: "정적 타입을 활용할 수 있고, 타입을 관리하여 코드의 안전성과 유지보수성을 높임",
+    description: "정적 타입을 활용할 수 있고, 타입을 관리하여 코드의 안전성을 높임",
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
   },
   {
