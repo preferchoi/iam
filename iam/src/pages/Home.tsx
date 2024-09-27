@@ -1,3 +1,5 @@
+import projects from "../assets/data/projects";
+
 function Home() {
   return (
     <>
@@ -18,13 +20,13 @@ function Home() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-            I am a web developer with expertise in building scalable and
-            efficient web applications using FastAPI, React.js, and Docker. I
-            enjoy solving complex problems and thrive in fast-paced, dynamic
-            environments.
+            안녕하세요! 저는 웹 개발자 최선호입니다. FastAPI, React, Docker 등의
+            기술을 활용하여 성능이 뛰어나고 확장 가능한 웹 애플리케이션을
+            개발하는 데 관심이 많습니다. 다양한 환경에서의 팀워크와 문제 해결
+            능력을 통해 여러 프로젝트를 성공적으로 완료한 경험이 있습니다.
           </p>
-          <a href="#about" className="text-blue-500 hover:underline">
-            Learn More
+          <a href="/about_me" className="text-blue-500 hover:underline">
+            더보기
           </a>
         </div>
       </section>
@@ -33,43 +35,32 @@ function Home() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-2">Project 1: Don Keeper</h3>
-              <p className="text-gray-700 mb-4">
-                A budget management web app built with Vue.js and Spring Boot.
-              </p>
-              <a href="#project1" className="text-blue-500 hover:underline">
-                View Details
-              </a>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-2">Project 2: O't MZ</h3>
-              <p className="text-gray-700 mb-4">
-                A fashion AI-powered recommendation system using FastAPI and
-                Vue.js.
-              </p>
-              <a href="#project2" className="text-blue-500 hover:underline">
-                View Details
-              </a>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-2">Project 3: Toriend</h3>
-              <p className="text-gray-700 mb-4">
-                A smart mirror for children built with Arduino, Jetson Nano, and
-                WebSocket.
-              </p>
-              <a href="#project3" className="text-blue-500 hover:underline">
-                View Details
-              </a>
-            </div>
+            {projects
+              .sort(() => 0.5 - Math.random())
+              .slice(0, 3)
+              .map((project) => (
+                <div
+                  className="bg-white p-6 rounded-lg shadow-md"
+                  key={project.id}
+                >
+                  <h3 className="text-2xl font-bold mb-2">
+                    Project {project.id}: {project.name}
+                  </h3>
+                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  <a
+                    href={`/project/${project.id}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    자세히 보기
+                  </a>
+                </div>
+              ))}
           </div>
           <a
-            href="#projects"
+            href="/projects"
             className="text-blue-500 hover:underline mt-6 block"
           >
-            View All Projects
+            모든 프로젝트 보기
           </a>
         </div>
       </section>
